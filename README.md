@@ -2,8 +2,6 @@
 
 Every week brings new plugins, skills and MCP servers for Claude Code. In that noise, these are the 24 I run every day at [gaja](https://trygaja.com), in four categories, plus four worth a try. For each one: what you get, the install lines, and what it adds to every message you send.
 
-Checked on 2026-11-18: every repository answered on GitHub, and every install line comes from that repository's own README. Costs in tokens were measured on my machine with `claude plugin details`, or counted from the skill's description where it installs without a plugin.
-
 ## Before you install anything
 
 A skill is cheap to install and easy to forget. Every skill puts its name and description into **every message you send**, whether you use it that day or not, and every MCP server adds its tools. Ten plugins with thirty skills each make a slower, more expensive Claude that follows each instruction less closely.
