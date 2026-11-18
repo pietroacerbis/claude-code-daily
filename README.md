@@ -94,7 +94,7 @@ For when you publish: launch films, product videos, their sound. These cover the
 | [earshot](https://github.com/Leonxlnx/earshot) | Claude hears, reviews and makes sound: a bank of sound effects made in code, and `earshot critique`, a scorecard of a film's audio against professional launch films | `uv tool install "earshot[mcp] @ git+https://github.com/Leonxlnx/earshot"`<br>`claude mcp add earshot --scope user -- earshot mcp` | Runs on CPU. Sound effects need no models; the analysis downloads about 1.1 GB once, with `earshot doctor --fetch`. Run critique on the final mp4, since encoding can change the loudness |
 | [ffmpeg-skill](https://github.com/kajisho5/ffmpeg-skill) | a local video editor for Claude: probe, cut, reframe 16:9 to 9:16, animated captions and export across 42 FFmpeg tools, and a check of its own output | `npx ffmpeg-skill` | No cloud, no API key. Captions from speech need `pip install faster-whisper`. Run the install again to update |
 
-Prefer plain files you own and can read for memory? [claude-personal-memory](https://github.com/pietroacerbis/claude-personal-memory) is my take: a journal per day, a mistakes log, and two skills that read and write them.
+Prefer plain files you own and can read for memory? [claude-personal-memory](https://github.com/pietroacerbis/claude-personal-memory) is my take: a small personal brain with a journal per day, a mistakes log, and six skills that read and write it.
 
 ---
 
@@ -123,7 +123,7 @@ Not part of my day yet. Each one does something no tool above does.
 This repository is one of three:
 
 - [How to build a skill](https://github.com/pietroacerbis/how-to-build-a-skill): the guide, the format, a template, and two skills that create and review skills.
-- [Claude personal memory](https://github.com/pietroacerbis/claude-personal-memory): Claude that remembers who you are and what you corrected, in plain files you own.
+- [Claude personal memory](https://github.com/pietroacerbis/claude-personal-memory): a small personal brain in plain files you own. Claude remembers who you are, your goals and what you corrected.
 - Claude Code daily: this one.
 
 <!-- CTA -->
