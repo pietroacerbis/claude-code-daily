@@ -1,6 +1,6 @@
 # The Claude Code tools I use every day
 
-Every week brings new plugins, skills and MCP servers for Claude Code. In that noise, these are the 27 I run every day at [gaja](https://trygaja.com), in four categories, plus four worth a try. For each one: what you get, the install lines, and what it adds to every message you send.
+Every week brings new plugins, skills and MCP servers for Claude Code. In that noise, these are the 24 I run every day at [gaja](https://trygaja.com), in four categories, plus four worth a try. For each one: what you get, the install lines, and what it adds to every message you send.
 
 Checked on 2026-11-18: every repository answered on GitHub, and every install line comes from that repository's own README. Costs in tokens were measured on my machine with `claude plugin details`, or counted from the skill's description where it installs without a plugin.
 
@@ -18,7 +18,7 @@ A skill is cheap to install and easy to forget. Every skill puts its name and de
 My rule:
 
 - **On everywhere** only what changes how every session runs, like superpowers.
-- **On per project** what serves one kind of work, like claude-seo in the website repository.
+- **On per project** what serves one kind of work, like gsap-skills, on only for animation work.
 - **Off** what you used once.
 - **Reviewed before install** when you did not write it. A skill runs with your permissions: [review-skill](https://github.com/pietroacerbis/how-to-build-a-skill) reads it for hidden instructions, secrets read and data sent out, and never runs it.
 
@@ -26,7 +26,7 @@ My rule:
 
 | Route | The line | Rows that use it |
 |---|---|---|
-| Plugin | `/plugin install NAME@MARKETPLACE` | superpowers, hallmark, claude-seo |
+| Plugin | `/plugin install NAME@MARKETPLACE` | superpowers, hallmark, watch |
 | Skill on its own | `npx skills add OWNER/REPO`, the Skills command line | huashu-design, remotion, defuddle |
 | MCP server | `claude mcp add`, or the tool's own setup command | context7, scrapegraph, earshot |
 | Its own command line | `npx`, `brew` or `cargo` | gws, ffmpeg-skill, rea |
@@ -49,13 +49,13 @@ These change how every session runs: a plan before the work, proof before "done"
 | [mattpocock-skills](https://github.com/mattpocock/skills) | grilling interviews that find the gaps in a plan, specs turned into tickets, handoffs from one session to the next | `/plugin install mattpocock-skills@claude-plugins-official` | 25 skills, about 1,600 tokens |
 | [i-have-adhd](https://github.com/ayghri/i-have-adhd) | replies that start with the next action: numbered steps, short, one thing to do at the end | `/plugin marketplace add ayghri/i-have-adhd`<br>`/plugin install i-have-adhd@i-have-adhd` | 1 skill and a hook, about 110 tokens. On everywhere |
 | [episodic-memory](https://github.com/obra/episodic-memory) | search by meaning over your past Claude Code conversations, so a decision from last month is one question away | `/plugin marketplace add obra/superpowers-marketplace`<br>`/plugin install episodic-memory@superpowers-marketplace` | 1 skill and a hook, about 100 tokens. After a Node upgrade, run `npm rebuild better-sqlite3` in its plugin folder |
-| [understand-anything](https://github.com/Egonex-AI/Understand-Anything) | turns a codebase into an interactive knowledge graph you can explore and question | `/plugin marketplace add Egonex-AI/Understand-Anything`<br>`/plugin install understand-anything` | 9 skills |
+| [understand-anything](https://github.com/Egonex-AI/Understand-Anything) | turns a codebase, a folder of docs or a markdown wiki into a knowledge graph you browse in a dashboard, then answers questions on it: how a flow works, what a change touches, where a new person should start | `/plugin marketplace add Egonex-AI/Understand-Anything`<br>`/plugin install understand-anything` | 9 skills. Run `/understand` once per repository, `/understand-knowledge` on a wiki. The first run reads every file, so it is the expensive one; later runs re-read only what changed |
 | [gws](https://github.com/googleworkspace/cli) | Gmail, Drive, Docs, Sheets and Calendar from the terminal, with one skill per service so Claude reads and writes them | `brew install googleworkspace-cli`<br>`npx skills add https://github.com/googleworkspace/cli` | About 70 tokens for the five skills I use. Install only the services you need, for example `.../cli/tree/main/skills/gws-gmail`. Needs your own Google Cloud OAuth client. Not an official Google product |
 | [claude-code-setup](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/claude-code-setup) | reads a repository and recommends the hooks, skills, MCP servers and subagents worth adding | `/plugin install claude-code-setup@claude-plugins-official` | 1 skill, about 140 tokens. Run it once per repository |
 
 ## 2. Design
 
-For anything a customer sees: the site, decks, product screens, a logo. Generated interfaces start to look alike when everyone runs the same design skills, so I review this category every quarter.
+For anything a customer sees: the site, decks, product screens. Generated interfaces start to look alike when everyone runs the same design skills, so I review this category every quarter.
 
 | Tool | What you get | Install | Cost and note |
 |---|---|---|---|
@@ -64,7 +64,6 @@ For anything a customer sees: the site, decks, product screens, a logo. Generate
 | [impeccable](https://github.com/pbakaus/impeccable) | a design vocabulary for the agent: steer with commands like polish and bolder, review with critique, and scan code or a live page for AI design patterns with `npx impeccable detect` | `npx impeccable install` | About 115 tokens. Scanning a URL needs Chrome or Edge installed |
 | [huashu-design](https://github.com/alchaincyf/huashu-design) | one sentence in, a design you can hand over: web pages, clickable app prototypes, editable PPTX decks, launch animations, infographics. With no brand assets it shows six thumbnails and develops three directions | `npx skills add alchaincyf/huashu-design` | The README is in Chinese, with `README.en.md` beside it |
 | [hallmark](https://github.com/Nutlope/hallmark) | an anti-AI-slop design skill: new pages, audits, redesigns, and a design extracted from a URL or a screenshot, checked with its own `sloplint` | `/plugin marketplace add nutlope/hallmark`<br>`/plugin install hallmark@hallmark` | About 70 tokens. Node 18 or later; the browser checks also need `puppeteer-core` |
-| [logo-design](https://github.com/kaankiziltug/logo-design-skill) | a logo and its production files, in five steps: discovery, the design brief, concepts, the choice of mark type, SVG exports | `/plugin marketplace add kaankiziltug/logo-design-skill`<br>`/plugin install logo-design@logo-design-skill` | About 260 tokens |
 
 ## 3. Research and web
 
@@ -79,8 +78,6 @@ For when Claude reads the web: account research, competitor pages, pages that on
 | [scrapegraph](https://github.com/ScrapeGraphAI/scrapegraph-mcp) | say in plain words what you want from a page and get structured data back; scrape, crawl, and watch pages for changes | `claude mcp add --transport http scrapegraph https://mcp.scrapegraphai.com/mcp --header "X-API-Key: YOUR_KEY"` | MCP server, no skills. API key from the ScrapeGraph dashboard |
 | [context7](https://github.com/upstash/context7) | current, version-specific docs and code examples for the library you code against, so Claude stops writing APIs from old training data | `npx ctx7 setup --claude` | MCP server or skill, you choose at setup. A free API key raises the limits. Node 22.13 or later |
 | [defuddle](https://github.com/kepano/defuddle) | turns a web page into clean markdown without the menus and the clutter, so reading a page costs fewer tokens | `npx skills add kepano/obsidian-skills --skill defuddle` | About 70 tokens. The skill comes from Steph Ango's obsidian-skills; the command line alone is `npx defuddle parse URL --markdown` |
-| [composio](https://github.com/ComposioHQ/composio) | one connection to more than 1,000 apps, Gmail, Slack, Notion and HubSpot among them, with the authentication handled, over MCP or its command line | `curl -fsSL https://composio.dev/install \| sh`<br>or its hosted MCP from the Composio dashboard | MCP server. Read the install script before you pipe it into `sh` |
-| [claude-seo](https://github.com/AgriciDaniel/claude-seo) | SEO audits inside Claude Code: technical SEO, Core Web Vitals, E-E-A-T, schema, local SEO, and whether AI search cites you | `/plugin marketplace add AgriciDaniel/claude-seo`<br>`/plugin install claude-seo@agricidaniel-claude-seo` | 29 skills and 20 agents. On only in the website repository |
 
 ## 4. Content and video
 
