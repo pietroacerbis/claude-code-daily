@@ -133,7 +133,7 @@ This repository is one of three:
 
 Plugins and skills give Claude actions. What makes them work for your team is the knowledge they read: your ICP, your stages, your objections, your voice. At gaja we build that from your calls, your CRM and your team.
 
-- Pietro Acerbis, pietro@trygaja.com, [LinkedIn](https://www.linkedin.com/in/pietroacerbis-prospeiq/)
+- Pietro Acerbis, pietro@trygaja.com, [LinkedIn](https://www.linkedin.com/in/pietroacerbis-gaja/)
 - [trygaja.com](https://trygaja.com)
 
 MIT licence.
