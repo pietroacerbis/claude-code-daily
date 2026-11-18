@@ -104,7 +104,7 @@ Not part of my day yet. Each one does something no tool above does.
 | [cli-anything](https://github.com/HKUDS/CLI-Anything) | builds a command line for desktop software, so Claude can drive apps that have no API; CLI-Hub lists the ones others built | `/plugin marketplace add HKUDS/CLI-Anything`<br>`/plugin install cli-anything` | Installed here and switched off. The hub: `pip install cli-anything-hub` |
 | [rea](https://github.com/morluto/rea) | Reverse Engineer Anything: one MCP that inspects native binaries, JavaScript and Electron apps, .NET assemblies and websites, explains how a feature works with the evidence, and builds a version for your project | `npx rea-agents setup` | Analysis runs locally. Native analysis uses Hopper, Ghidra or IDA if installed. Repositories with similar names exist: install only from morluto/rea, rea.tools or the rea-agents npm package |
 | [craft-anything](https://github.com/storytold/craft-anything) | point it at a website, an app or a game and say what you want: it studies the original, has your coding agent build your own version, and scores how alike they are | `git clone https://github.com/storytold/craft-anything && cd craft-anything`<br>`cargo install --path apps/craft-anything-cli` | A clean-room engine in Rust, 1.97 or later, plus a coding agent signed in. A desktop app is on its downloads page |
-| [humanizer](https://github.com/blader/humanizer) | removes the tells of AI writing from a draft | `/plugin marketplace add blader/humanizer`<br>`/plugin install humanizer@humanizer` | 1 skill. Claude Code 2.1.142 or later. I run my own banned-phrases check on every draft, which is why it sits here |
+| [humanizer](https://github.com/blader/humanizer) | removes the tells of AI writing from a draft | `/plugin marketplace add blader/humanizer`<br>`/plugin install humanizer@humanizer` | 1 skill. Claude Code 2.1.142 or later. My own check is [claude-antislop](https://github.com/pietroacerbis/claude-antislop), which runs as hooks on every file and reply; humanizer is the rewrite you call by hand |
 
 ---
 
@@ -117,20 +117,26 @@ Not part of my day yet. Each one does something no tool above does.
 
 ## The Skill kit
 
-This repository is one of three:
+This repository is one of four:
 
 - [How to build a skill](https://github.com/pietroacerbis/how-to-build-a-skill): the guide, the format, a template, and two skills that create and review skills.
 - [Claude personal memory](https://github.com/pietroacerbis/claude-personal-memory): a small personal brain in plain files you own. Claude remembers who you are, your goals and what you corrected.
 - Claude Code daily: this one.
+- [Claude antislop](https://github.com/pietroacerbis/claude-antislop): keeps the tells of AI writing out of what Claude writes, with a list of 61 patterns, hooks that check every file and reply, and a skill that rewrites a draft until it is clean.
 
 <!-- CTA -->
 ---
 
-## Want these tools working on your own go-to-market?
+## Want these tools working on your team's go-to-market?
 
-Plugins and skills give Claude actions. What makes them work for your team is the knowledge they read: your ICP, your stages, your objections, your voice. At gaja we build that from your calls, your CRM and your team.
+At gaja we build two things for go-to-market teams:
 
-- Pietro Acerbis, pietro@trygaja.com, [LinkedIn](https://www.linkedin.com/in/pietroacerbis-gaja/)
-- [trygaja.com](https://trygaja.com)
+- **The knowledge your Claude reads**: your ICP, your deal stages, your objections, your voice, built from your calls, docs, tools and team.
+- **The shared skills your team runs**: written on the processes you already follow, deployed to the whole team, all reading the same knowledge.
+
+Get in touch:
+
+- Pietro Acerbis, Founder at gaja: pietro@trygaja.com, [LinkedIn](https://www.linkedin.com/in/pietroacerbis-gaja/)
+- gaja: [trygaja.com](https://trygaja.com), [LinkedIn](https://www.linkedin.com/company/gaja-brain/)
 
 MIT licence.
